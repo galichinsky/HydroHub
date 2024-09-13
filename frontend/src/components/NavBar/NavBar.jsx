@@ -10,7 +10,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className="NavBar">
-      <Link to="/posts">🏊🏼</Link>
+      <Link to="/workouts">🏊🏼</Link>
       &nbsp; | &nbsp;
     {user ? (
         <>

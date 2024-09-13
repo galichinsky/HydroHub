@@ -19,7 +19,7 @@ function App() {
         {user ? (
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/posts" element={<PostListPage />} />
+            <Route path="/workouts" element={<PostListPage />} />
             <Route path="/posts/new" element={<NewPostPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
