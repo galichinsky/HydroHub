@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
     <nav className="NavBar">
       <Link to="/posts">🏊🏼</Link>
       &nbsp; | &nbsp;
-      {user ? (
+    {user ? (
         <>
           <Link to="/posts/new">New Workout</Link>
           &nbsp; | &nbsp;

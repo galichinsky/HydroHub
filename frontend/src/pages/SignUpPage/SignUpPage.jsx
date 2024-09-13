@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as authService from '../../services/authService';
+import './SignUpPage.css';
 
 export default function SignUpPage({ setUser }) {
   const [formData, setFormData] = useState({
@@ -86,7 +87,7 @@ export default function SignUpPage({ setUser }) {
           onChange={handleChange}
           required
         />
-        <label>Confirm</label>
+        <label>Confirm Password</label>
         <input
           type="password"
           name="confirm"

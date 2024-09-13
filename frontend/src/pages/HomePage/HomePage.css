@@ -80,7 +80,7 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   padding: 80px 0;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 .feature {

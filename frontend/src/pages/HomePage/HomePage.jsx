@@ -29,7 +29,7 @@ export default function HomePage() {
           </div>
           <div className="feature">
           <i className="fas fa-chart-line feature-icon"></i>
-            <h2>Track Progress</h2>
+            <h2>Track</h2>
             <p>Save and track your swim progress and favorite workouts.</p>
           </div>
           <div className="feature">
