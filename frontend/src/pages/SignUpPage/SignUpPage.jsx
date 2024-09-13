@@ -4,6 +4,9 @@ import * as authService from '../../services/authService';
 export default function SignUpPage({ setUser }) {
   const [formData, setFormData] = useState({
     name: '',
+    hometown: '',
+    events: [''],
+    goals: [''],
     email: '',
     password: '',
     confirm: '',
@@ -38,6 +41,32 @@ export default function SignUpPage({ setUser }) {
           type="text"
           name="name"
           value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <label>Hometown</label>
+        <input
+          type="text"
+          name="hometown"
+          value={formData.hometown}
+          onChange={handleChange}
+          required
+        />
+        <label>Events</label>
+        <input
+        placeholder='Separate with a ","'
+          type="text"
+          name="events"
+          value={formData.events}
+          onChange={handleChange}
+          required
+        />
+        <label>Goals</label>
+        <input
+        placeholder='Separate with a ","'
+          type="text"
+          name="goals"
+          value={formData.goals}
           onChange={handleChange}
           required
         />
