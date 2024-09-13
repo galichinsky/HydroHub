@@ -18,6 +18,17 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    hometown: { type: String,
+      required: true,
+     },
+    events: {
+      type: [String],
+      required: false,
+    },
+    goals: {
+      type: [String],
+      required: false,
+    },
   },
   {
     timestamps: true,
