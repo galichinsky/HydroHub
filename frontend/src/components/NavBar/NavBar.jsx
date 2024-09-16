@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom';
-import * as authService from '../../services/authService';
-import './NavBar.css';
+import { Link } from "react-router-dom";
+import * as authService from "../../services/authService";
+import "./NavBar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faPlus } from "@fortawesome/free-solid-svg-icons";
+import "./NavBar.css";
 
 export default function NavBar({ user, setUser }) {
   function handleLogOut() {
@@ -10,13 +13,20 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className="NavBar">
-      <Link to="/workouts">🏊🏼</Link>
+      <Link to="/workouts" className="workouts-link">🏊🏼</Link>
       &nbsp; | &nbsp;
-    {user ? (
+      {user ? (
         <>
-          <Link to="/workouts/new">New Workout</Link>
+          <Link to="/workouts/new" >
+            <FontAwesomeIcon icon={faPlus} />
+            &nbsp;
+            New Workout
+          </Link>
           &nbsp; | &nbsp;
-          <span>{user.name}</span>
+          <span>
+            <FontAwesomeIcon icon={faUser} />
+            &nbsp;{user.name}
+          </span>
           &nbsp; | &nbsp;
           <Link to="" onClick={handleLogOut}>
             Log Out
@@ -27,8 +37,8 @@ export default function NavBar({ user, setUser }) {
           <Link to="/login">New Workout</Link>
           &nbsp; | &nbsp;
           <Link to="/login">Log In</Link>
-          &nbsp; | &nbsp;
-          <Link to="/signup">Sign Up</Link>
+          {/* &nbsp; | &nbsp;
+          <Link to="/signup">Sign Up</Link> */}
         </>
       )}
     </nav>

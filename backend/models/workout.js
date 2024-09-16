@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const commentSchema = new Schema(
+const commentSchema = new mongoose.Schema(
   {
     text: { type: String, required: true },
     author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
@@ -8,9 +8,11 @@ const commentSchema = new Schema(
   { timestamps: true }
 )
 
-const workoutSchema = new Schema(
+// const Comment = mongoose.model("Comment", commentSchema);
+
+const workoutSchema = new mongoose.Schema(
   {
-    workoutName: { type: String, required: true },
+    title: { type: String,  required: true },
     category: {
       type: [String],
       enum: [
@@ -34,18 +36,18 @@ const workoutSchema = new Schema(
       ],
       required: true,
     },
-    intencity: {
+    intensity: {
       type: [String],
       enum: ["Easy", "Moderate", "Hard", "All-out"],
       required: true,
     },
-    totalDistance: { type: Number, required: true },
-    totalTime: { type: Number, required: true },
+    totalDistance: { type: Number,  },
+    totalTime: { type: Number,  },
     workout: {
       type: String,
       required: true,
     },
-    author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    author: { type: mongoose.Schema.Types.ObjectId, ref: "User"},
     comments: [ commentSchema ],
   },
   { timestamps: true }

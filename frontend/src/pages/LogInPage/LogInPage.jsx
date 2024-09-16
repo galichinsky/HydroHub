@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as authService from '../../services/authService';
+import { Link } from 'react-router-dom';
 
 export default function LogInPage({ setUser }) {
   const [formData, setFormData] = useState({
@@ -47,6 +48,7 @@ export default function LogInPage({ setUser }) {
         <button type="submit">LOG IN</button>
       </form>
       <p className="error-message">&nbsp;{errorMsg}</p>
+      <Link to="/signup"> Not Registered? </Link> 
     </>
   );
 }

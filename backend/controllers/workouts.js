@@ -1,11 +1,26 @@
-// controllers/workouts.js
-const express = require('express');
-const verifyToken = require('../middleware/checkToken');
+// const { create } = require('../models/user');
 const Workout = require('../models/workout');
-const router = express.Router();
+// const Comment = require('../models/comment');
 
-// Routes
-router.use(verifyToken);
+module.exports = {
+  index,
+  create,
+}
 
-// GET /workouts - display all workouts
-router.get('/posts',)
+
+async function index(req, res) {
+  const workouts = await Workout.find({author: req.user._id}).sort({createdAt: -1});
+  res.json(workouts);
+}
+
+async function create(req, res) {
+  try {
+    req.body.author = req.user._id;
+    console.log(req.body);
+    const workout = await Workout.create(req.body);
+    workout._doc.author = req.user;
+    res.status(201).json(workout);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
