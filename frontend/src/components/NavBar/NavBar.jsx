@@ -14,9 +14,9 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
     {user ? (
         <>
-          <Link to="/posts/new">New Workout</Link>
+          <Link to="/workouts/new">New Workout</Link>
           &nbsp; | &nbsp;
-          <span>Welcome, {user.name}</span>
+          <span>{user.name}</span>
           &nbsp; | &nbsp;
           <Link to="" onClick={handleLogOut}>
             Log Out
@@ -24,7 +24,8 @@ export default function NavBar({ user, setUser }) {
         </>
       ) : (
         <>
-
+          <Link to="/login">New Workout</Link>
+          &nbsp; | &nbsp;
           <Link to="/login">Log In</Link>
           &nbsp; | &nbsp;
           <Link to="/signup">Sign Up</Link>

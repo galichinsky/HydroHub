@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './HomePage.css';
 
 export default function HomePage() {
@@ -14,8 +15,8 @@ export default function HomePage() {
             <p className="hero-subtitle">
               Discover and share swim workouts tailored to your needs.
             </p>
-            <a href="#explore" className="hero-btn">
-              Explore Workouts
+            <a className=''>
+              <Link to='/workouts'>Explore Workouts</Link>
             </a>
           </div>
         </section>
