@@ -8,6 +8,7 @@ import WorkoutsListPage from '../WorkoutsListPage/WorkoutsListPage';
 import NewWorkoutPage from '../NewWorkoutPage/NewWorkoutPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LogInPage from '../LogInPage/LogInPage';
+import * as workouts from '../../services/workoutsService';
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -19,7 +20,7 @@ function App() {
         {user ? (
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/workouts" element={<WorkoutsListPage />} />
+            <Route path="/workouts" element={<WorkoutsListPage workouts={workouts}/>} />
             <Route path="/workouts/new" element={<NewWorkoutPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

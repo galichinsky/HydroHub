@@ -1,15 +1,16 @@
 // const { create } = require('../models/user');
-const Workout = require('../models/workout');
+const Workout = require("../models/workout");
 // const Comment = require('../models/comment');
 
 module.exports = {
   index,
   create,
-}
-
+};
 
 async function index(req, res) {
-  const workouts = await Workout.find({author: req.user._id}).sort({createdAt: -1});
+  const workouts = await Workout.find({ author: req.user._id })
+    .sort({ createdAt: -1 })
+    .populate("author");
   res.json(workouts);
 }
 
