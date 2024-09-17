@@ -6,12 +6,14 @@ import NavBar from '../../components/NavBar/NavBar';
 import HomePage from '../HomePage/HomePage';
 import WorkoutsListPage from '../WorkoutsListPage/WorkoutsListPage';
 import NewWorkoutPage from '../NewWorkoutPage/NewWorkoutPage';
+import WorkoutDetailsPage from '../WorkoutDetailsPage/WorkoutDetailsPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LogInPage from '../LogInPage/LogInPage';
 import * as workouts from '../../services/workoutsService';
 
 function App() {
   const [user, setUser] = useState(getUser());
+
 
   return (
     <main id="react-app">
@@ -20,8 +22,9 @@ function App() {
         {user ? (
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/workouts" element={<WorkoutsListPage workouts={workouts}/>} />
+            <Route path="/workouts" element={<WorkoutsListPage />} />
             <Route path="/workouts/new" element={<NewWorkoutPage />} />
+            <Route path="/workouts/:workoutId" element={<WorkoutDetailsPage user={user}/>} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         ) : (

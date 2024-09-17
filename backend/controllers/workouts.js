@@ -5,6 +5,7 @@ const Workout = require("../models/workout");
 module.exports = {
   index,
   create,
+  show,
 };
 
 async function index(req, res) {
@@ -24,4 +25,9 @@ async function create(req, res) {
   } catch (err) {
     res.status(400).json(err);
   }
+}
+
+async function show(req, res) {
+  const workout = await Workout.findById(req.params.id).populate("author");
+  res.json(workout);
 }

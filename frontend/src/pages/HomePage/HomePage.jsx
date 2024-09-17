@@ -13,7 +13,7 @@ export default function HomePage() {
             <p className="hero-subtitle">
               Discover and share swim workouts tailored to your needs.
             </p>
-            <Link className="hero-btn" to="/workouts">
+            <Link className="hero-btn" to="/login">
               Explore Workouts
             </Link>
           </div>

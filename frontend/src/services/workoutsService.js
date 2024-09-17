@@ -9,3 +9,7 @@ export async function getAll() {
 export async function create(newWorkoutData) {
   return sendRequest(`${BASE_URL}`, "POST", newWorkoutData);
 }
+
+export async function getOne(workoutId) {
+  return sendRequest(`${BASE_URL}/${workoutId}`);
+}

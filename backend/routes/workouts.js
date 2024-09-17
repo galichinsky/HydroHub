@@ -10,4 +10,7 @@ router.get('/', workoutsCtrl.index);
 // POST /api/workouts - create a new workout
 router.post('/', workoutsCtrl.create);
 
+// GET /api/workouts/:id - return one workout
+router.get('/:id', workoutsCtrl.show);
+
 module.exports = router;
