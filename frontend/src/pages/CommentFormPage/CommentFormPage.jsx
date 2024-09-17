@@ -22,7 +22,7 @@ const CommentFormPage = ({ handleAddComment }) => {
 
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
-      <p>Comment here</p>
+      <p>Comment here:</p>
       <textarea
         name="text"
         id="text-input"

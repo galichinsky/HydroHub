@@ -31,7 +31,7 @@ async function create(req, res) {
 }
 
 async function show(req, res) {
-  const workout = await Workout.findById(req.params.id).populate("author");
+  const workout = await Workout.findById(req.params.id).populate("author").populate({path: "comments", populate: {path: "author"}});
   res.json(workout);
 }
 
@@ -50,6 +50,7 @@ async function remove(req, res) {
 }
 
 async function addComment(req, res) {
+  req.body.author = req.user._id;
   const workout = await Workout.findById(req.params.id).populate("author");
   workout.comments.push({ ...req.body, author: req.user._id });
   await workout.save();

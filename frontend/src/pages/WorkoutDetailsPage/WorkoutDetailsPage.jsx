@@ -86,7 +86,8 @@ export default function WorkoutDetailsPage({ user }) {
       
       {workout.comments.map((comment) => (
         <div className="comment-container"  key={comment._id}>
-          <p> <FontAwesomeIcon icon={faUser} /> {comment.author.name} on: {new Date(comment.createdAt).toLocaleDateString()}</p>
+          <p> <FontAwesomeIcon icon={faUser} /> {comment.author.name} {new Date(comment.createdAt).toLocaleDateString()}</p>
+          
           <p>{comment.text}</p>
         </div>
       ))}

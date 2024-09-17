@@ -18,13 +18,13 @@ export default function NavBar({ user, setUser }) {
       {user ? (
         <>
           <Link to="/workouts/new" >
-            <FontAwesomeIcon icon={faPlus} />
+            <FontAwesomeIcon icon={faPlus} bounce/>
             &nbsp;
             New Workout
           </Link>
           &nbsp; | &nbsp;
           <span>
-            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faUser} bounce />
             &nbsp;{user.name}
           </span>
           &nbsp; | &nbsp;

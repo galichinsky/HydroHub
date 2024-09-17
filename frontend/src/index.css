@@ -19,6 +19,9 @@
 body {
   margin: 0;
   min-height: 100vh;
+  background-color: #bbebfa;
+background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 20%), radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 20%);
+background-size: 2vmin 2vmin;
 }
 
 h1, h2 {

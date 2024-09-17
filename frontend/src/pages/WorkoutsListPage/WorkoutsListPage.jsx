@@ -33,7 +33,7 @@ export default function WorkoutListPage({ user }) {
               <p>
                 <strong>{workout.title}</strong>
               </p>
-              <p>{workout.category.join(" ")}</p>
+              <p>{workout.category.join(" | ")}</p>
               <p>Intensity: {workout.intensity}</p>
               <p>
                 <FontAwesomeIcon icon={faUser} /> By: {workout.author.name}
