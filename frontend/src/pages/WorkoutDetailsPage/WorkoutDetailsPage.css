@@ -59,9 +59,19 @@ div.comment-container {
 form.comment-form {
   display: grid;
   gap: 1.2vmin;
-  padding: 4vmin;
+  padding: 3vmin;
   border: 0.25vmin solid var(--border-color); /* Your theme's border color */
   border-radius: 1vmin;
   width: 70%;
   
 }
+
+form.comment-form textarea {
+  padding: 0.7vmin;
+  font-size: 2vmin;
+}
+
+button.comment-btn {
+ width: auto;
+}
+
