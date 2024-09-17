@@ -6,6 +6,7 @@ module.exports = {
   index,
   create,
   show,
+  update,
 };
 
 async function index(req, res) {
@@ -30,4 +31,13 @@ async function create(req, res) {
 async function show(req, res) {
   const workout = await Workout.findById(req.params.id).populate("author");
   res.json(workout);
+}
+
+async function update(req, res) {
+  const updatedWorkout = await Workout.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  );
+  res.status(200).json(updatedWorkout);
 }

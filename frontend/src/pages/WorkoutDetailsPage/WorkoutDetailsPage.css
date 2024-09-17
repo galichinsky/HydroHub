@@ -1,0 +1,27 @@
+.workout-details {
+  padding: 20px;
+  border: 2px solid var(--primary-color); /* Your theme's primary color */
+  border-radius: 8px;
+  background-color: var(--background-color); /* Your theme's background */
+  color: var(--text-color); /* Your theme's text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.workout-details h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--heading-color); /* The color used for headings */
+}
+
+.workout-details p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.workout-details strong {
+  font-weight: bold;
+  color: var(--highlight-color); /* Highlighted color for labels */
+}
+

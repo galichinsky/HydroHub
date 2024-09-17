@@ -36,6 +36,7 @@ button {
   color: whitesmoke;
   cursor: pointer;
 }
+
 button:hover {
   background-color: white;
   color: #1a1a1a;
@@ -53,9 +54,15 @@ a {
   color: #1a1a1a;
 }
 
+a {
+  text-decoration: none; /* Remove default underline */
+  color: inherit; /* Keep the link color consistent */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
 a:hover {
-  background-color: #1a1a1a;
-  color: whitesmoke;
+  background-color: #1a1a1a; /* Change the background color on hover */
+  border: 1px solid #1a1a1a; /* Add a border on hover */
 }
 
 form {
@@ -64,7 +71,7 @@ form {
   padding: 4vmin;
   border: 0.25vmin solid #1a1a1a;
   border-radius: 1vmin;
-  width: 45%;
+  width: 70%;
 }
 
 input {

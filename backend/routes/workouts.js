@@ -13,4 +13,9 @@ router.post('/', workoutsCtrl.create);
 // GET /api/workouts/:id - return one workout
 router.get('/:id', workoutsCtrl.show);
 
+// PUT /api/workouts/:id - update one workout
+router.put('/:id', workoutsCtrl.update);
+
+
+
 module.exports = router;

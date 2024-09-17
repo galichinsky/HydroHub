@@ -1,8 +1,10 @@
-import { useState } from "react";
-import * as workoutsService from "../../services/workoutsService";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import * as workoutsService from "../../services/workoutsService";
 
-export default function NewWorkoutPage() {
+export default function EditWorkoutPage() {
+  const { workoutId } = useParams();
   const [workoutData, setWorkoutData] = useState({
     title: '',
     category: [],
@@ -22,6 +24,14 @@ export default function NewWorkoutPage() {
   
   const navigate = useNavigate();
 
+  useEffect(() => {
+    async function fetchWorkout() {
+      const workout = await workoutsService.getOne(workoutId);
+      setWorkoutData(workout);
+    }
+    fetchWorkout();
+  }, [workoutId]);
+
   function handleChange(evt) {
     setWorkoutData({ ...workoutData, [evt.target.name]: evt.target.value });
   }
@@ -32,15 +42,14 @@ export default function NewWorkoutPage() {
     setWorkoutData({ ...workoutData, [evt.target.name]: selectedValues });
   }
 
-
-  async function handleAddWorkout(evt) {
+  async function handleUpdateWorkout(evt) {
     evt.preventDefault();
-    await workoutsService.create(workoutData);
+    await workoutsService.update(workoutId, workoutData);
     navigate("/workouts");
   }
 
   return (
-    <form onSubmit={handleAddWorkout}>
+    <form onSubmit={handleUpdateWorkout}>
       {/* <h1>{workoutId ? "Edit Workout" : "New Workout"}</h1> */}
       <div>
         <label htmlFor="title-input">Workout Name</label>
@@ -129,7 +138,7 @@ export default function NewWorkoutPage() {
         />
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit">Update</button>
     </form>
   );
 }
