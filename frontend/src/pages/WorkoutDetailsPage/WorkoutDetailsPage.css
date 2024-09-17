@@ -39,3 +39,25 @@ a.edit {
 a.edit:hover {
   background-color: rgb(0, 140, 170);
 }
+
+div.comment-container {
+  margin: 2vmin;
+  align-self: center;
+  padding: 2vmin;
+  border: 2px solid var(--primary-color); /* Your theme's primary color */
+  border-radius: 8px;
+  background-color: var(--background-color); /* Your theme's background */
+  color: var(--text-color); /* Your theme's text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+}
+
+form.comment-form {
+  display: grid;
+  gap: 1.2vmin;
+  padding: 4vmin;
+  border: 0.25vmin solid var(--border-color); /* Your theme's border color */
+  border-radius: 1vmin;
+  width: 70%;
+  
+}

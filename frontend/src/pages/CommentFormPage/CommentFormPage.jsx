@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./CommentFormPage.css";
 
 const CommentFormPage = ({ handleAddComment }) => {
   const [formData, setFormData] = useState({
@@ -20,7 +21,8 @@ const CommentFormPage = ({ handleAddComment }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="comment-form" onSubmit={handleSubmit}>
+      <p>Comment here</p>
       <textarea
         name="text"
         id="text-input"
@@ -29,7 +31,7 @@ const CommentFormPage = ({ handleAddComment }) => {
         placeholder="Add a comment..."
         required
       ></textarea>
-      <button type="submit">Post Comment</button>
+      <button className="comment-btn" type="submit">Post Comment</button>
     </form>
   );
 };

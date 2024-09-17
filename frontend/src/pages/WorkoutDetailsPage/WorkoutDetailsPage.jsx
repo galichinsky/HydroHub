@@ -3,6 +3,8 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import * as workoutsService from "../../services/workoutsService";
 import "./WorkoutDetailsPage.css";
 import CommentFormPage from "../CommentFormPage/CommentFormPage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function WorkoutDetailsPage({ user }) {
   const { workoutId } = useParams();
@@ -79,17 +81,17 @@ export default function WorkoutDetailsPage({ user }) {
       <br />
       <section>
         <h3>Comments</h3>
-        {!workout.comments.length && <p>There are no comments...</p> }
-
-        {workout.comments.map((comment) => (
-          <div key={comment._id}>
-            <p>Created on: {new Date(comment.createdAt).toLocaleDateString()}</p>
-            <p>By: {comment.author.name}</p>
-            <p>{comment.text}</p>
-          </div>
-        ))}
-        <CommentFormPage handleAddComment={handleAddComment} user={user}/>
-      </section>
+        {!workout.comments.length && <p>There are no comments...</p>}
+      </section> 
+      
+      {workout.comments.map((comment) => (
+        <div className="comment-container"  key={comment._id}>
+          <p> <FontAwesomeIcon icon={faUser} /> {comment.author.name} on: {new Date(comment.createdAt).toLocaleDateString()}</p>
+          <p>{comment.text}</p>
+        </div>
+      ))}
+      
+      <CommentFormPage handleAddComment={handleAddComment} user={user} />
     </>
   );
 }
