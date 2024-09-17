@@ -48,7 +48,7 @@ button:disabled {
 
 a {
   border-radius: 0.8vmin;
-  padding: 0.5vmin;
+  /* padding: 0.5vmin; */
   font-size: 2vmin;
   text-decoration: none;
   color: #1a1a1a;
@@ -60,9 +60,8 @@ a {
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
-a:hover {
-  background-color: #1a1a1a; /* Change the background color on hover */
-  border: 1px solid #1a1a1a; /* Add a border on hover */
+nav a:hover {
+  background-color: #1a1a1a;
 }
 
 form {

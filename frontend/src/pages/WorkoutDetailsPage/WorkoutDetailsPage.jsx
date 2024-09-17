@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import * as workoutsService from "../../services/workoutsService";
 import "./WorkoutDetailsPage.css";
 
-export default function WorkoutDetailsPage() {
-  const [user, setUser] = useState(null);
+export default function WorkoutDetailsPage({ user }) {
+
   const { workoutId } = useParams();
   const [workout, setWorkout] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getWorkout() {
@@ -24,6 +25,11 @@ export default function WorkoutDetailsPage() {
 
   if (!workout) {
     return <h1>Workout not found</h1>;
+  }
+
+  const handleDeleteWorkout = async (workoutId) => { 
+    await workoutsService.remove(workoutId);
+    navigate("/workouts");
   }
 
   return (
@@ -53,9 +59,10 @@ export default function WorkoutDetailsPage() {
           <strong>Workout:</strong> {workout.workout}
         </p>
       </div>
-      {workout.author._id && (
+      {workout.author._id === user._id &&  (
         <div>
           <Link to={`/workouts/${workout._id}/edit`}>Edit</Link>
+          <button onClick={() => handleDeleteWorkout(workoutId)} >Delete</button>
         </div>
       )}
     </>

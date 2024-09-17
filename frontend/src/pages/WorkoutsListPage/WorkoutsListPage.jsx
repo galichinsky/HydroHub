@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-export default function WorkoutListPage() {
+export default function WorkoutListPage({ user }) {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function WorkoutListPage() {
       <div className="workout-list">
         {workouts.map((workout) => (
           <Link
-            to={`/workouts/${workout._id}`}
+            to={user ? `/workouts/${workout._id}` : '/login'}
             key={workout._id}
             className="workout-link"
           >

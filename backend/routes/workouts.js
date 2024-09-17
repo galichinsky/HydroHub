@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const workoutsCtrl = require('../controllers/workouts');
+const ensureLoggedIn = require('../middleware/ensureLoggedIn');
 
 // All paths start with '/api/auth'
 
@@ -8,14 +9,15 @@ const workoutsCtrl = require('../controllers/workouts');
 router.get('/', workoutsCtrl.index);
 
 // POST /api/workouts - create a new workout
-router.post('/', workoutsCtrl.create);
+router.post('/', ensureLoggedIn, workoutsCtrl.create);
 
 // GET /api/workouts/:id - return one workout
-router.get('/:id', workoutsCtrl.show);
+router.get('/:id', ensureLoggedIn, workoutsCtrl.show);
 
 // PUT /api/workouts/:id - update one workout
-router.put('/:id', workoutsCtrl.update);
+router.put('/:id', ensureLoggedIn, workoutsCtrl.update);
 
-
+// DELETE /api/workouts/:id - delete one workout
+router.delete('/:id', ensureLoggedIn, workoutsCtrl.delete);
 
 module.exports = router;

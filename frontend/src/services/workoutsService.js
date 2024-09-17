@@ -18,6 +18,6 @@ export async function update(workoutId, workoutData) {
   return sendRequest(`${BASE_URL}/${workoutId}`, "PUT", workoutData);
 }
 
-export async function deleteOne(workoutId) {
+export async function remove(workoutId) {
   return sendRequest(`${BASE_URL}/${workoutId}`, "DELETE");
 }

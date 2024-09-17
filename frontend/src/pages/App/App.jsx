@@ -22,7 +22,7 @@ function App() {
         {user ? (
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/workouts" element={<WorkoutsListPage />} />
+            <Route path="/workouts" element={<WorkoutsListPage user={user}/>} />
             <Route path="/workouts/new" element={<NewWorkoutPage />} />
             <Route
               path="/workouts/:workoutId/edit"

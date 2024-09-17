@@ -7,10 +7,11 @@ module.exports = {
   create,
   show,
   update,
+  delete: remove,
 };
 
 async function index(req, res) {
-  const workouts = await Workout.find({ author: req.user._id })
+  const workouts = await Workout.find({})
     .sort({ createdAt: -1 })
     .populate("author");
   res.json(workouts);
@@ -40,4 +41,9 @@ async function update(req, res) {
     { new: true }
   );
   res.status(200).json(updatedWorkout);
+}
+
+async function remove(req, res) {
+  const deletedWorkout = await Workout.findOneAndDelete({ _id: req.params.id, author: req.user._id });
+  res.status(200).json(deletedWorkout);
 }
