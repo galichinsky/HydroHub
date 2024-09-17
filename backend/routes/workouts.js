@@ -20,4 +20,7 @@ router.put('/:id', ensureLoggedIn, workoutsCtrl.update);
 // DELETE /api/workouts/:id - delete one workout
 router.delete('/:id', ensureLoggedIn, workoutsCtrl.delete);
 
+// POST /api/workouts/:id/comments - add a comment to a workout
+router.post('/:id/comments', ensureLoggedIn, workoutsCtrl.addComment);
+
 module.exports = router;

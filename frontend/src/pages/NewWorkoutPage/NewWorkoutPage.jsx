@@ -1,25 +1,46 @@
 import { useState } from "react";
 import * as workoutsService from "../../services/workoutsService";
 import { useNavigate } from "react-router-dom";
+import Select from "react-select";
 
 export default function NewWorkoutPage() {
   const [workoutData, setWorkoutData] = useState({
-    title: '',
+    title: "",
     category: [],
     intensity: [],
-    totalDistance: '',
-    totalTime: '',
-    workout: '',
+    totalDistance: "",
+    totalTime: "",
+    workout: "",
   });
 
   const categories = [
-    "Freestyle", "Backstroke", "Breaststroke", "Butterfly", "IM",
-    "Kick", "Pull", "Drill", "Sprint", "Distance", "Technique",
-    "Endurance", "Speed", "Strength", "Recovery", "Warm-up", "Cool-down"
+    "Freestyle",
+    "Backstroke",
+    "Breaststroke",
+    "Butterfly",
+    "IM",
+    "Kick",
+    "Pull",
+    "Drill",
+    "Sprint",
+    "Distance",
+    "Technique",
+    "Endurance",
+    "Speed",
+    "Strength",
+    "Recovery",
+    "Warm-up",
+    "Cool-down",
   ];
 
   const intensities = ["Easy", "Moderate", "Hard", "All-out"];
-  
+  const courses = ["SCM", "SCY", "LCM"];
+
+  const categoryOptions = categories.map((category) => ({
+    name: category,
+    label: category,
+  }));
+
   const navigate = useNavigate();
 
   function handleChange(evt) {
@@ -28,10 +49,26 @@ export default function NewWorkoutPage() {
 
   function handleMultiSelect(evt) {
     const { name, options } = evt.target;
-    const selectedValues = Array.from(options).filter(o => o.selected).map(o => o.value);
+    const selectedValues = Array.from(options)
+      .filter((o) => o.selected)
+      .map((o) => o.value);
     setWorkoutData({ ...workoutData, [evt.target.name]: selectedValues });
   }
 
+  function handleCheckboxChange(evt) {
+    const { name, checked } = evt.target;
+    if (checked) {
+      setWorkoutData({
+        ...workoutData,
+        category: [...workoutData.category, name],
+      });
+    } else {
+      setWorkoutData({
+        ...workoutData,
+        category: workoutData.category.filter((item) => item !== name),
+      });
+    }
+  }
 
   async function handleAddWorkout(evt) {
     evt.preventDefault();
@@ -57,7 +94,7 @@ export default function NewWorkoutPage() {
       <div>
         <label htmlFor="category-input">Category (Select all that apply)</label>
         <select
-        type="text"
+          type="text"
           name="category"
           id="category-input"
           multiple
@@ -65,7 +102,7 @@ export default function NewWorkoutPage() {
           onChange={handleMultiSelect}
           required
         >
-          {categories.map(category => (
+          {categories.map((category) => (
             <option key={category} value={category}>
               {category}
             </option>
@@ -74,7 +111,9 @@ export default function NewWorkoutPage() {
       </div>
 
       <div>
-        <label htmlFor="intensity-input" >Intensity (Select all that apply)</label>
+        <label htmlFor="intensity-input">
+          Intensity (Select all that apply)
+        </label>
         <select
           type="text"
           name="intensity"
@@ -84,7 +123,7 @@ export default function NewWorkoutPage() {
           onChange={handleMultiSelect}
           required
         >
-          {intensities.map(intensity => (
+          {intensities.map((intensity) => (
             <option key={intensity} value={intensity}>
               {intensity}
             </option>
@@ -93,16 +132,21 @@ export default function NewWorkoutPage() {
       </div>
 
       <div>
-        <label htmlFor="totalDistance-input">Total Distance (meters)</label>
-        <input
-          type="number"
-          name="totalDistance"
-          id="totalDistance-input"
-          value={workoutData.totalDistance}
-          onChange={handleChange}
+        <label htmlFor="course-input">Course</label>
+        <select
+          type="text"
+          name="course"
+          id="course-input"
+          value={workoutData.course}
+          onChange={handleMultiSelect}
           required
-          min="0"
-        />
+          >
+          {courses.map((course) => (
+            <option key={course} value={course}>
+              {course}
+            </option>
+          ))}
+          </select>
       </div>
 
       <div>
@@ -119,7 +163,7 @@ export default function NewWorkoutPage() {
       </div>
 
       <div>
-        <label htmlFor="workout-input">Workout Description</label>
+        <label htmlFor="workout-input">Workout</label>
         <textarea
           name="workout"
           id="workout-input"
@@ -133,4 +177,3 @@ export default function NewWorkoutPage() {
     </form>
   );
 }
-

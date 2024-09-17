@@ -25,3 +25,17 @@
   color: var(--highlight-color); /* Highlighted color for labels */
 }
 
+a.edit {
+  padding: 0.8vmin;
+  font-size: 2vmin;
+  font-weight: 500;
+  background-color: rgb(37, 182, 223);
+  color: rgb(244, 244, 244);
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+a.edit:hover {
+  background-color: rgb(0, 140, 170);
+}

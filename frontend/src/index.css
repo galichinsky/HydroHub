@@ -26,21 +26,22 @@ h1, h2 {
 }
 
 button {
-  border: 0.5vmin solid #1a1a1a;
-  border-radius: 0.5vmin;
-  padding: 0.8vmin;
+  border: 0.5vmin solid #cd2d2d;
+  border-radius: 1vmin;
+  padding: 0.5vmin;
+  margin: 1vmin;
   font-size: 2vmin;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #cd2d2d;
   color: whitesmoke;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: white;
-  color: #1a1a1a;
-  border-color: #1a1a1a;
+  background-color: rgb(169, 10, 10);
+  color: whitesmoke;
+  border-color: rgb(169, 10, 10);
 }
 button:disabled {
   background-color: grey;
@@ -61,7 +62,8 @@ a {
 }
 
 nav a:hover {
-  background-color: #1a1a1a;
+  background-color: none;
+  transform: scale(1.3);
 }
 
 form {

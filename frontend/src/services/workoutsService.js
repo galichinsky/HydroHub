@@ -21,3 +21,7 @@ export async function update(workoutId, workoutData) {
 export async function remove(workoutId) {
   return sendRequest(`${BASE_URL}/${workoutId}`, "DELETE");
 }
+
+export async function addComment(workoutId, commentData) {
+  return sendRequest(`${BASE_URL}/${workoutId}/comments`, "POST", commentData);
+}

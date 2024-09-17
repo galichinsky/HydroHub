@@ -22,3 +22,7 @@
   font-size: 1.5rem; /* Adjust the size to your preference */
   text-decoration: none;
 }
+
+a.workouts-link:hover {
+  text-decoration: none;
+}

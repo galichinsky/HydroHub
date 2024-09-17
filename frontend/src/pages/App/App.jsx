@@ -10,7 +10,7 @@ import WorkoutDetailsPage from "../WorkoutDetailsPage/WorkoutDetailsPage";
 import EditWorkoutPage from "../EditWorkoutPage/EditWorkoutPage";
 import SignUpPage from "../SignUpPage/SignUpPage";
 import LogInPage from "../LogInPage/LogInPage";
-
+import CommentFormPage from "../CommentFormPage/CommentFormPage";
 
 function App() {
   const [user, setUser] = useState(getUser());

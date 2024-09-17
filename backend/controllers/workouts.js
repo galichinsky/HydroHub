@@ -8,6 +8,7 @@ module.exports = {
   show,
   update,
   delete: remove,
+  addComment,
 };
 
 async function index(req, res) {
@@ -46,4 +47,11 @@ async function update(req, res) {
 async function remove(req, res) {
   const deletedWorkout = await Workout.findOneAndDelete({ _id: req.params.id, author: req.user._id });
   res.status(200).json(deletedWorkout);
+}
+
+async function addComment(req, res) {
+  const workout = await Workout.findById(req.params.id).populate("author", "name");
+  workout.comments.push({ ...req.body, author: req.user._id });
+  await workout.save();
+  res.status(201).json(workout);
 }

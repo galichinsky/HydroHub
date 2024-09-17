@@ -41,7 +41,10 @@ const workoutSchema = new mongoose.Schema(
       enum: ["Easy", "Moderate", "Hard", "All-out"],
       required: true,
     },
-    totalDistance: { type: Number,  },
+    course: { 
+      type: [String],
+      enum: ["SCM", "SCY", "LCM"],  
+    },
     totalTime: { type: Number,  },
     workout: {
       type: String,
