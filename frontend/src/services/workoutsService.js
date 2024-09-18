@@ -29,3 +29,7 @@ export async function remove(workoutId) {
 export async function addComment(workoutId, commentData) {
   return sendRequest(`${BASE_URL}/${workoutId}/comments`, "POST", commentData);
 }
+
+// export async function removeComment(workoutId, commentId) {
+//   return sendRequest(`${BASE_URL}/${workoutId}/comments/${commentId}`, "DELETE");
+// }

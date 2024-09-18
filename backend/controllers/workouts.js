@@ -10,6 +10,7 @@ module.exports = {
   delete: remove,
   addComment,
   showUser,
+  // deleteComment: removeComment,
 };
 
 async function index(req, res) {
@@ -67,3 +68,17 @@ async function addComment(req, res) {
   const updatedWorkout = await Workout.findById(req.params.id).populate("author").populate({path: "comments", populate: {path: "author"}});
   res.status(201).json(updatedWorkout);
 }
+
+// async function removeComment(req, res) {
+//   const workout = await Workout.findById(req.params.id).populate("author");
+//   const idx = workout.comments.findIndex(
+//     (comment) => comment._id.toString() === req.params.commentId
+//   );
+//   if (idx === -1) return res.status(401).json("Comment not found");
+//   if (workout.comments[idx].author.toString() !== req.user._id.toString())
+//     return res.status(401).json("Not authorized");
+//   workout.comments.splice(idx, 1);
+//   await workout.save();
+//   const updatedWorkout = await Workout.findById(req.params.id).populate("author").populate({path: "comments", populate: {path: "author"}});
+//   res.status(200).json(updatedWorkout);
+// }

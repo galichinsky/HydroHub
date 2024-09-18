@@ -39,7 +39,13 @@ export default function WorkoutDetailsPage({ user }) {
     setWorkout(updatedWorkout);
   };
 
-  
+  const handleDeleteComment = async (commentId) => {
+    const updatedWorkout = await workoutsService.removeComment(
+      workoutId,
+      commentId
+    );
+    setWorkout(updatedWorkout);
+  }
 
   return (
     <>
@@ -94,17 +100,15 @@ export default function WorkoutDetailsPage({ user }) {
       </section>
 
       {workout.comments.map((comment) => (
-        <div className="comment-container" key={comment._id}>
+        <><div className="comment-container" key={comment._id}>
           <p>
             {" "}
             <FontAwesomeIcon icon={faUser} /> {comment.author.name} on{" "}
             {new Date(comment.createdAt).toLocaleDateString()}
           </p>
-
           <div dangerouslySetInnerHTML={{ __html: comment.text }}></div>
-        </div>
+        </div></>
       ))}
-
       <CommentFormPage handleAddComment={handleAddComment} user={user} />
     </>
   );

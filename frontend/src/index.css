@@ -20,13 +20,20 @@ body {
   margin: 0;
   min-height: 100vh;
   background-color: #bbebfa;
-background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 20%), radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 20%);
-background-size: 2vmin 2vmin;
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.15) 20%,
+      transparent 20%
+    ),
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 20%);
+  background-size: 2vmin 2vmin;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   font-family: EB_Garamond, serif;
+  margin-top: 2vmin;
 }
 
 button {
@@ -54,8 +61,8 @@ button:disabled {
 
 a {
   border-radius: 0.8vmin;
-  /* padding: 0.5vmin; */
-  font-size: 2vmin;
+  padding: 0.5vmin;
+  font-size: 2.5vmin;
   text-decoration: none;
   color: #1a1a1a;
   font-family: EB_Garamond, serif;
@@ -69,7 +76,7 @@ a {
 
 nav a:hover {
   background-color: none;
-  transform: scale(1.3);
+  transform: scale(1.1);
 }
 
 form {
@@ -106,6 +113,7 @@ h2 {
 }
 
 @font-face {
-  font-family: 'EB_Garamond';
-  src: url(../../../HydroHub/frontend/public/fonts/EB_Garamond/EBGaramond-Regular.ttf) format('truetype');
+  font-family: "EB_Garamond";
+  src: url(../../../HydroHub/frontend/public/fonts/EB_Garamond/EBGaramond-Regular.ttf)
+    format("truetype");
 }

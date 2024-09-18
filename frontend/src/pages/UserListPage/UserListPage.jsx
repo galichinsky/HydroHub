@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 
 export default function UserListPage({ user }) {
   const [workouts, setWorkouts] = useState([]);
-  const userWorkouts = workouts.filter((workout) => workout.author._id === user._id);
+  const userWorkouts = workouts.filter(
+    (workout) => workout.author._id === user._id
+  );
   useEffect(() => {
     async function getWorkouts() {
       const workouts = await workoutsService.getAll();
@@ -20,32 +22,40 @@ export default function UserListPage({ user }) {
     return <h1>No workouts created yet...</h1>;
   }
   return (
+    <>
+      {userWorkouts.map((workout) => (
+        <h1 key={workout._id}>
+          {workout.author.name}'s
+          Workouts
+        </h1>
+      ))}
+
       <>
-      <h1>Workouts</h1>
-      <div>
-      {userWorkouts.length > 0 ? (
-        userWorkouts.map((workout) => (
-          <div key={workout._id}>
-            <Link to={`/workouts/${workout._id}`}>
-            <article id="workout-card" key={workout._id}>
-              <p>
-                <strong>{workout.title}</strong>
-              </p>
-              <p>{workout.category.join(" | ")}</p>
-              <p>Intensity: {workout.intensity}</p>
-              <p>
-                <FontAwesomeIcon icon={faUser} /> By: {workout.author.name}
-              </p>
-              <p>
-                Created on: {new Date(workout.createdAt).toLocaleDateString()}
-              </p>
-            </article></Link>
-          </div>
-        ))
-      ) : (
-        <p>No workouts created...</p>
-      )}
-    </div>
+        {userWorkouts.length > 0 ? (
+          userWorkouts.map((workout) => (
+            <div key={workout._id}>
+              <Link to={`/workouts/${workout._id}`}>
+                <article id="workout-card" key={workout._id}>
+                  <p>
+                    <strong>{workout.title}</strong>
+                  </p>
+                  <p>{workout.category.join(" | ")}</p>
+                  <p>Intensity: {workout.intensity}</p>
+                  <p>
+                    <FontAwesomeIcon icon={faUser} /> By: {workout.author.name}
+                  </p>
+                  <p>
+                    Created on:{" "}
+                    {new Date(workout.createdAt).toLocaleDateString()}
+                  </p>
+                </article>
+              </Link>
+            </div>
+          ))
+        ) : (
+          <p>No workouts created...</p>
+        )}
+      </>
     </>
   );
 }

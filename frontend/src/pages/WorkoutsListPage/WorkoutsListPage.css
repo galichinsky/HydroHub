@@ -5,11 +5,12 @@
     border-radius: 15px;
     background-color: #f9f9f9;
     width: 40vmin;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #workout-card:hover {
     background-color: #f0f0f0;
-    border-radius: 1px;
+    border-radius: 15px;
 }
 
 .workout-list {
@@ -18,12 +19,21 @@
     justify-content: center;
     align-items: center;
     /* make only four cards show in a line */
-    max-width: 90%;
-
+    max-width: 80%;
 }
 
 .workout-list h2 {
     text-align: center;
     margin: 20px;
+}
+
+article#workout-card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.402);
+    border-radius: 15px;
+    background-color: rgba(236, 237, 255, 0.299);
+    width: 40vmin;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 

@@ -1,13 +1,14 @@
-import { useState } from 'react';
-import * as authService from '../../services/authService';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import * as authService from "../../services/authService";
+import { Link } from "react-router-dom";
+import "./LogInPage.css";
 
 export default function LogInPage({ setUser }) {
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
-  const [errorMsg, setErrorMsg] = useState('');
+  const [errorMsg, setErrorMsg] = useState("");
 
   async function handleSubmit(evt) {
     evt.preventDefault();
@@ -16,18 +17,18 @@ export default function LogInPage({ setUser }) {
       setUser(user);
     } catch (err) {
       // An error occurred
-      setErrorMsg('Log In Failed - Try Again');
+      setErrorMsg("Log In Failed - Try Again");
     }
   }
 
   function handleChange(evt) {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
-    setErrorMsg('');
+    setErrorMsg("");
   }
 
   return (
     <>
-      <h2 className='log-in'>Log In!</h2>
+      <h2 className="log-in">Log In!</h2>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <label>Email</label>
         <input
@@ -48,7 +49,10 @@ export default function LogInPage({ setUser }) {
         <button type="submit">LOG IN</button>
       </form>
       <p className="error-message">&nbsp;{errorMsg}</p>
-      <Link to="/signup"> Not Registered? </Link> 
+
+      <Link className="not-registered" to="/signup">
+        Not Registered? Click here
+      </Link>
     </>
   );
 }
