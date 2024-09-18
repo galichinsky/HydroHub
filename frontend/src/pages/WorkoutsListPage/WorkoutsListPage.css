@@ -13,6 +13,8 @@
     border-radius: 15px;
 }
 
+
+
 .workout-list {
     display: flex;
     flex-wrap: wrap;
@@ -35,5 +37,12 @@ article#workout-card {
     background-color: rgba(236, 237, 255, 0.299);
     width: 40vmin;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+article#workout-card:hover {
+    background-color: rgba(240, 240, 240, 0.699);
+    border-radius: 15px;
+    /* easy transition */
+    transition: background-color 0.4s;
 }
 
