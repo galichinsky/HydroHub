@@ -16,6 +16,7 @@ const workoutSchema = new mongoose.Schema(
     category: {
       type: [String],
       enum: [
+        "Stroke",
         "Freestyle",
         "Backstroke",
         "Breaststroke",
@@ -25,6 +26,7 @@ const workoutSchema = new mongoose.Schema(
         "Pull",
         "Drill",
         "Sprint",
+        "Power",
         "Distance",
         "Technique",
         "Endurance",

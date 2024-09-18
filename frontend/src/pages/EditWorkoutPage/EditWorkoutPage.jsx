@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import * as workoutsService from "../../services/workoutsService";
+import ReactQuill, {Quill} from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 export default function EditWorkoutPage() {
+  const [editorConent, setEditorContent] = useState("");
   const { workoutId } = useParams();
   const [workoutData, setWorkoutData] = useState({
     title: '',
@@ -21,6 +24,7 @@ export default function EditWorkoutPage() {
   ];
 
   const intensities = ["Easy", "Moderate", "Hard", "All-out"];
+  const courses = ["SCM", "SCY", "LCM"];
   
   const navigate = useNavigate();
 
@@ -34,6 +38,11 @@ export default function EditWorkoutPage() {
 
   function handleChange(evt) {
     setWorkoutData({ ...workoutData, [evt.target.name]: evt.target.value });
+  }
+
+  function handleEditorChange(value) {
+    setEditorContent(value);
+    setWorkoutData({ ...workoutData, workout: value });
   }
 
   function handleMultiSelect(evt) {
@@ -102,16 +111,21 @@ export default function EditWorkoutPage() {
       </div>
 
       <div>
-        <label htmlFor="totalDistance-input">Total Distance (meters)</label>
-        <input
-          type="number"
-          name="totalDistance"
-          id="totalDistance-input"
-          value={workoutData.totalDistance}
-          onChange={handleChange}
+        <label htmlFor="course-input">Course</label>
+        <select
+          type="text"
+          name="course"
+          id="course-input"
+          value={workoutData.course}
+          onChange={handleMultiSelect}
           required
-          min="0"
-        />
+        >
+          {courses.map((course) => (
+            <option key={course} value={course}>
+              {course}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div>
@@ -128,12 +142,13 @@ export default function EditWorkoutPage() {
       </div>
 
       <div>
-        <label htmlFor="workout-input">Workout Description</label>
-        <textarea
+      <label htmlFor="workout-input">Workout</label>
+        <ReactQuill
+          theme="snow"
           name="workout"
           id="workout-input"
-          value={workoutData.workout}
-          onChange={handleChange}
+          value={editorConent}
+          onChange={handleEditorChange}
           required
         />
       </div>

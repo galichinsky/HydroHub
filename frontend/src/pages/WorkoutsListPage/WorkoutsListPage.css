@@ -2,8 +2,9 @@
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: #f9f9f9;
+    width: 40vmin;
 }
 
 #workout-card:hover {
@@ -15,6 +16,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    /* make only four cards show in a line */
+    max-width: 90%;
+
 }
 
 .workout-list h2 {

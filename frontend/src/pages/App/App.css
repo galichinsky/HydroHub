@@ -9,5 +9,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  /* make only four cards show in a line */
+  
 }
 

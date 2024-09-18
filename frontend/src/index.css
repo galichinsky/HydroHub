@@ -39,6 +39,7 @@ button {
   background-color: #cd2d2d;
   color: whitesmoke;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
@@ -73,9 +74,9 @@ form {
   display: grid;
   gap: 1.2vmin;
   padding: 4vmin;
-  border: 0.25vmin solid #1a1a1a;
-  border-radius: 1vmin;
-  width: 70%;
+  border: 0.2vmin solid #1a1a1a;
+  border-radius: 2vmin;
+  width: 90%;
 }
 
 input {

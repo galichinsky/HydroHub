@@ -54,5 +54,6 @@ async function addComment(req, res) {
   const workout = await Workout.findById(req.params.id).populate("author");
   workout.comments.push({ ...req.body, author: req.user._id });
   await workout.save();
-  res.status(201).json(workout);
+  const updatedWorkout = await Workout.findById(req.params.id).populate("author").populate({path: "comments", populate: {path: "author"}});
+  res.status(201).json(updatedWorkout);
 }

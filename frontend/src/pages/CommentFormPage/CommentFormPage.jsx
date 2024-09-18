@@ -1,16 +1,24 @@
 import { useState } from "react";
 import "./CommentFormPage.css";
+import ReactQuill from "react-quill";
+import { set } from "mongoose";
 
 const CommentFormPage = ({ handleAddComment }) => {
+  const [editorConent, setEditorContent] = useState("");
   const [formData, setFormData] = useState({
     text: "",
   });
+    console.log(formData);
+  // const handleChange = (e) => {
+  //   setFormData({
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
 
-  const handleChange = (e) => {
-    setFormData({
-      [e.target.name]: e.target.value,
-    });
-  };
+  function handleEditorChange(value) {
+    setEditorContent(value);
+    setFormData({ text: value });
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,19 +26,30 @@ const CommentFormPage = ({ handleAddComment }) => {
     setFormData({
       text: "",
     });
+    setEditorContent("");
   };
 
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
-      <p>Comment here:</p>
-      <textarea
+      <p>Comment here</p>
+      <ReactQuill
+          theme="snow"
+          name="text"
+          id="text-input"
+          value={editorConent}
+          onChange={handleEditorChange}
+          required
+        />
+      {/* <textarea
         name="text"
         id="text-input"
         value={formData.text}
         onChange={handleChange}
         placeholder="Add a comment..."
         required
-      ></textarea>
+      ></textarea> */}
+      <br />
+      <br />
       <button className="comment-btn" type="submit">Post Comment</button>
     </form>
   );

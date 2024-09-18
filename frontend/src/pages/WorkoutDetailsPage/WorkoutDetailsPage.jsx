@@ -43,7 +43,18 @@ export default function WorkoutDetailsPage({ user }) {
     <>
       <>
         <div className="workout-details">
-          <h1>{workout.title}</h1>
+          <h1>
+            {workout.title}{" "}
+            <p>
+              <FontAwesomeIcon icon={faUser} /> {workout.author.name}
+            </p>
+          </h1>
+          <span>
+            <p>
+              <strong>Created on:</strong>{" "}
+              {new Date(workout.createdAt).toLocaleDateString()}
+            </p>
+          </span>
           <p>
             <strong>Category:</strong> {workout.category.join(" ")}
           </p>
@@ -56,16 +67,12 @@ export default function WorkoutDetailsPage({ user }) {
           <p>
             <strong>Total Time:</strong> {workout.totalTime} minutes
           </p>
-          <p>
-            <strong>By:</strong> {workout.author.name}
-          </p>
-          <p>
-            <strong>Created on:</strong>{" "}
-            {new Date(workout.createdAt).toLocaleDateString()}
-          </p>
-          <p>
-            <strong>Workout:</strong> {workout.workout}
-          </p>
+          <div>
+            <h3>
+              <strong>Workout:</strong>
+            </h3>{" "}
+            <div dangerouslySetInnerHTML={{ __html: workout.workout }}></div>
+          </div>
         </div>
         {workout.author._id === user._id && (
           <div>
@@ -82,16 +89,20 @@ export default function WorkoutDetailsPage({ user }) {
       <section>
         <h3>Comments</h3>
         {!workout.comments.length && <p>There are no comments...</p>}
-      </section> 
-      
+      </section>
+
       {workout.comments.map((comment) => (
-        <div className="comment-container"  key={comment._id}>
-          <p> <FontAwesomeIcon icon={faUser} /> {comment.author.name} {new Date(comment.createdAt).toLocaleDateString()}</p>
-          
-          <p>{comment.text}</p>
+        <div className="comment-container" key={comment._id}>
+          <p>
+            {" "}
+            <FontAwesomeIcon icon={faUser} /> {comment.author.name} on{" "}
+            {new Date(comment.createdAt).toLocaleDateString()}
+          </p>
+
+          <div dangerouslySetInnerHTML={{ __html: comment.text }}></div>
         </div>
       ))}
-      
+
       <CommentFormPage handleAddComment={handleAddComment} user={user} />
     </>
   );

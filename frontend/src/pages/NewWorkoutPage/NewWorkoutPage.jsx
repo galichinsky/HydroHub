@@ -2,8 +2,12 @@ import { useState } from "react";
 import * as workoutsService from "../../services/workoutsService";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
+import ReactQuill, {Quill} from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 export default function NewWorkoutPage() {
+  const [editorConent, setEditorContent] = useState("");
+  console.log(editorConent);
   const [workoutData, setWorkoutData] = useState({
     title: "",
     category: [],
@@ -14,6 +18,7 @@ export default function NewWorkoutPage() {
   });
 
   const categories = [
+    "Stroke",
     "Freestyle",
     "Backstroke",
     "Breaststroke",
@@ -23,6 +28,7 @@ export default function NewWorkoutPage() {
     "Pull",
     "Drill",
     "Sprint",
+    "Power",
     "Distance",
     "Technique",
     "Endurance",
@@ -45,6 +51,11 @@ export default function NewWorkoutPage() {
 
   function handleChange(evt) {
     setWorkoutData({ ...workoutData, [evt.target.name]: evt.target.value });
+  }
+
+  function handleEditorChange(value) {
+    setEditorContent(value);
+    setWorkoutData({ ...workoutData, workout: value });
   }
 
   function handleMultiSelect(evt) {
@@ -78,7 +89,6 @@ export default function NewWorkoutPage() {
 
   return (
     <form onSubmit={handleAddWorkout}>
-      {/* <h1>{workoutId ? "Edit Workout" : "New Workout"}</h1> */}
       <div>
         <label htmlFor="title-input">Workout Name</label>
         <input
@@ -92,7 +102,7 @@ export default function NewWorkoutPage() {
       </div>
 
       <div>
-        <label htmlFor="category-input">Category (Select all that apply)</label>
+        <label htmlFor="category-input">Category (Hold ⌘/Ctrl to select multiple )</label>
         <select
           type="text"
           name="category"
@@ -112,7 +122,7 @@ export default function NewWorkoutPage() {
 
       <div>
         <label htmlFor="intensity-input">
-          Intensity (Select all that apply)
+          Intensity
         </label>
         <select
           type="text"
@@ -140,13 +150,13 @@ export default function NewWorkoutPage() {
           value={workoutData.course}
           onChange={handleMultiSelect}
           required
-          >
+        >
           {courses.map((course) => (
             <option key={course} value={course}>
               {course}
             </option>
           ))}
-          </select>
+        </select>
       </div>
 
       <div>
@@ -164,13 +174,20 @@ export default function NewWorkoutPage() {
 
       <div>
         <label htmlFor="workout-input">Workout</label>
-        <textarea
+        <ReactQuill
+          theme="snow"
           name="workout"
           id="workout-input"
+          value={editorConent}
+          onChange={handleEditorChange}
+          required
+        />
+        {/* <textarea
+          name="workout"
           value={workoutData.workout}
           onChange={handleChange}
           required
-        />
+        /> */}
       </div>
 
       <button type="submit">Submit</button>
