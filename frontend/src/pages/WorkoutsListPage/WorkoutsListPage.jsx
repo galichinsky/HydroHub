@@ -21,7 +21,7 @@ export default function WorkoutListPage({ user }) {
   }
   return (
     <>
-      <h1>Workout List Page</h1>
+      <h1>Workouts</h1>
       <div className="workout-list">
         {workouts.map((workout) => (
           <Link

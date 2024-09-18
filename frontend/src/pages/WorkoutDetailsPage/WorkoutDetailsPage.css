@@ -59,6 +59,10 @@ div.comment-container {
   max-width: 80%;
 }
 
+div.comment-container p {
+  padding: 0.4vmin;
+}
+
 form.comment-form {
   display: grid;
   gap: 1.2vmin;
