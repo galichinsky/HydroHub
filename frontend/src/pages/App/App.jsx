@@ -11,6 +11,7 @@ import EditWorkoutPage from "../EditWorkoutPage/EditWorkoutPage";
 import SignUpPage from "../SignUpPage/SignUpPage";
 import LogInPage from "../LogInPage/LogInPage";
 import CommentFormPage from "../CommentFormPage/CommentFormPage";
+import UserListPage from "../UserListPage/UserListPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -34,6 +35,7 @@ function App() {
               path="/workouts/:workoutId"
               element={<WorkoutDetailsPage user={user} />}
             />
+            <Route path="/userWorkouts" element={<UserListPage user={user} />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         ) : (

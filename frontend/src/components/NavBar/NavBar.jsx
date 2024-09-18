@@ -24,8 +24,10 @@ export default function NavBar({ user, setUser }) {
           </Link>
           &nbsp; | &nbsp;
           <span>
+            <Link to={`/userWorkouts`}>
             <FontAwesomeIcon icon={faUser} bounce />
             &nbsp;{user.name}
+            </Link>
           </span>
           &nbsp; | &nbsp;
           <Link to="" onClick={handleLogOut}>

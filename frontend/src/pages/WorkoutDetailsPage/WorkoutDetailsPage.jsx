@@ -39,6 +39,8 @@ export default function WorkoutDetailsPage({ user }) {
     setWorkout(updatedWorkout);
   };
 
+  
+
   return (
     <>
       <>
@@ -46,7 +48,7 @@ export default function WorkoutDetailsPage({ user }) {
           <h1>
             {workout.title}{" "}
             <p>
-              <FontAwesomeIcon icon={faUser} /> {workout.author.name}
+              <FontAwesomeIcon icon={faUser} /> &nbsp;{workout.author.name}
             </p>
           </h1>
           <span>

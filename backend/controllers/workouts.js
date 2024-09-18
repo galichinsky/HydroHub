@@ -9,6 +9,7 @@ module.exports = {
   update,
   delete: remove,
   addComment,
+  showUser,
 };
 
 async function index(req, res) {
@@ -33,6 +34,15 @@ async function create(req, res) {
 async function show(req, res) {
   const workout = await Workout.findById(req.params.id).populate("author").populate({path: "comments", populate: {path: "author"}});
   res.json(workout);
+}
+
+async function showUser(req, res) {
+  try {
+    const user = await User.findById(req.params.userId).populate("workouts");
+    res.json(user);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
 async function update(req, res) {

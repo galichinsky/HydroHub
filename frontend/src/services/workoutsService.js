@@ -6,6 +6,10 @@ export async function getAll() {
   return sendRequest(BASE_URL);
 }
 
+export async function showUser(workoutId) {
+  return sendRequest(`${BASE_URL}/userWorkouts`, "GET");
+}
+
 export async function create(newWorkoutData) {
   return sendRequest(`${BASE_URL}`, "POST", newWorkoutData);
 }

@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: EB_Garamond, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -26,6 +26,7 @@ background-size: 2vmin 2vmin;
 
 h1, h2 {
   text-align: center;
+  font-family: EB_Garamond, serif;
 }
 
 button {
@@ -57,6 +58,7 @@ a {
   font-size: 2vmin;
   text-decoration: none;
   color: #1a1a1a;
+  font-family: EB_Garamond, serif;
 }
 
 a {
@@ -101,4 +103,9 @@ h2 {
 
 .error-message {
   color: rgb(166, 29, 29);
+}
+
+@font-face {
+  font-family: 'EB_Garamond';
+  src: url(../../../HydroHub/frontend/public/fonts/EB_Garamond/EBGaramond-Regular.ttf) format('truetype');
 }

@@ -27,7 +27,7 @@ export default function LogInPage({ setUser }) {
 
   return (
     <>
-      <h2>Log In!</h2>
+      <h2 className='log-in'>Log In!</h2>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <label>Email</label>
         <input

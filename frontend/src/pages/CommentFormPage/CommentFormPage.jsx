@@ -31,8 +31,8 @@ const CommentFormPage = ({ handleAddComment }) => {
 
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
-      <p>Comment here</p>
       <ReactQuill
+      placeholder='Comment here...'
           theme="snow"
           name="text"
           id="text-input"

@@ -14,6 +14,9 @@ router.post('/', ensureLoggedIn, workoutsCtrl.create);
 // GET /api/workouts/:id - return one workout
 router.get('/:id', ensureLoggedIn, workoutsCtrl.show);
 
+// GET /api/workouts/user/:userId - return all workouts for a user
+router.get('/user/:userId', ensureLoggedIn, workoutsCtrl.showUser);
+
 // PUT /api/workouts/:id - update one workout
 router.put('/:id', ensureLoggedIn, workoutsCtrl.update);
 
