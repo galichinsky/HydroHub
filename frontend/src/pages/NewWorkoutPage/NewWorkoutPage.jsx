@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import ReactQuill, {Quill} from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import "./NewWorkoutPage.css";
 
 export default function NewWorkoutPage() {
   const [editorConent, setEditorContent] = useState("");
@@ -182,15 +183,8 @@ export default function NewWorkoutPage() {
           onChange={handleEditorChange}
           required
         />
-        {/* <textarea
-          name="workout"
-          value={workoutData.workout}
-          onChange={handleChange}
-          required
-        /> */}
       </div>
-
-      <button type="submit">Submit</button>
+      <button className="submit-workout" type="submit">Submit</button>
     </form>
   );
 }

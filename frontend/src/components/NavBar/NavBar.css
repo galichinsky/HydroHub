@@ -16,6 +16,7 @@
     ),
     radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 20%);
   background-size: 2vmin 2vmin;
+  border-bottom: black 1px solid;
 }
 
 .NavBar span {

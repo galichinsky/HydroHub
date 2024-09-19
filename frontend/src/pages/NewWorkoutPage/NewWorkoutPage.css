@@ -1,0 +1,61 @@
+input#title-input{
+  margin-bottom: 1vmin;
+}
+
+select#category-input {
+  margin-bottom: 1vmin;
+  padding: 0.8vmin;
+  font-size: 2vmin;
+  border: 0.3vmin solid #01b4d8;
+  border-radius: 0.5vmin;
+  width: 35%;
+  height: 30vmin;
+}
+
+select#intensity-input {
+  padding: 0.8vmin;
+  font-size: 2vmin;
+  border: 0.3vmin solid #01b4d8;
+  border-radius: 0.5vmin;
+  width: 35%;
+  margin-bottom: 1vmin;
+}
+
+select#course-input {
+  padding: 0.5vmin;
+  font-size: 2vmin;
+  border: 0.3vmin solid #01b4d8;
+  border-radius: 0.5vmin;
+  width: 35%;
+  margin-bottom: 1vmin;
+}
+
+button.submit-workout {
+  justify-self: center;
+  width: 50%;
+}
+
+input#totalTime-input {
+  padding: 0.8vmin;
+  font-size: 2vmin;
+  border: 0.3vmin solid #01b4d8;
+  border-radius: 0.5vmin;
+  width: 35%;
+  margin-bottom: 1vmin;
+}
+
+div.ql-toolbar.ql-snow{
+  border: 0.3vmin solid #01b4d8;
+}
+
+div.ql-container.ql-snow{
+  border: 0.3vmin solid #01b4d8;
+}
+
+button.ql {
+  box-shadow: none;
+}
+
+span.ql-formats {
+  display: none;
+}
