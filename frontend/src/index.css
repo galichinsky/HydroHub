@@ -72,9 +72,9 @@ a {
 }
 
 a {
-  text-decoration: none; /* Remove default underline */
-  color: inherit; /* Keep the link color consistent */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {

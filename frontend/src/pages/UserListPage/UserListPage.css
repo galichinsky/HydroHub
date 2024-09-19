@@ -17,7 +17,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* make only four cards show in a line */
     max-width: 90%;
 
 }

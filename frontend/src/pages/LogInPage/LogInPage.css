@@ -4,11 +4,9 @@ a.not-registered {
   background-color: #00b4d8d6;
   padding: 1vmin;
   box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.339);
-  /* text-shadow: 0px 1px 1px #ece5e5; */
 }
 
 a.not-registered:hover {
-  /* color: #549cc2; */
   background-color: none;
   transform: scale(1.05);
   transition: transform 0.3s ease;

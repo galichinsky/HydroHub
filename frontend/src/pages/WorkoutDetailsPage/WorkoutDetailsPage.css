@@ -1,9 +1,9 @@
 .workout-details {
   padding: 1vmin;
-  border: 2px solid var(--primary-color); /* Your theme's primary color */
+  border: 2px solid var(--primary-color);
   border-radius: 8px;
-  background-color: var(--background-color); /* Your theme's background */
-  color: var(--text-color); /* Your theme's text color */
+  background-color: var(--background-color);
+  color: var(--text-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   min-width: 50%;
   max-width: 50%;
@@ -16,17 +16,14 @@
 
 .workout-details h1 {
   font-size: 2rem;
-  color: #028fc2; /* The color used for headings */
-  font-family: "Poppins", sans-serif; /* Use a modern font */
+  color: #028fc2;
+  font-family: "Poppins", sans-serif;
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
   background: linear-gradient(90deg, #00b4d8, #0077b6);
-  /* -webkit-background-clip: text; */
-  background-clip: text; /* Add the standard property 'background-clip' */
-  /* -webkit-text-fill-color: transparent; */
+  background-clip: text;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  /* transition: transform 0.3s ease-in-out; */
 }
 
 .workout-details p {
@@ -47,7 +44,7 @@ p.comments {
 
 .workout-details strong {
   font-weight: bold;
-  color: var(--highlight-color); /* Highlighted color for labels */
+  color: var(--highlight-color);
 }
 
 a.edit {
@@ -72,10 +69,10 @@ div.comment-container {
   align-self: center;
   padding: 2vmin;
   padding-left: 5vmin;
-  border: 2px solid var(--primary-color); /* Your theme's primary color */
+  border: 2px solid var(--primary-color);
   border-radius: 8px;
   background-color: whitesmoke;
-  color: var(--text-color); /* Your theme's text color */
+  color: var(--text-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   min-width: 50%;
   max-width: 80%;
@@ -89,7 +86,7 @@ form.comment-form {
   display: grid;
   gap: 1.2vmin;
   padding: 3vmin;
-  border: 0.25vmin solid var(--border-color); /* Your theme's border color */
+  border: 0.25vmin solid var(--border-color);
   border-radius: 1vmin;
   width: 70%;
   
