@@ -63,6 +63,7 @@ Try out the application here: [HydroHub by Gregory Lichinsky](https://hydrohub-9
 **Version Control**: 
 
   ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+  ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 
 **Development Tools**: 
 
