@@ -36,7 +36,7 @@ export default function WorkoutListPage({ user }) {
               <p>{workout.category.join(" | ")}</p>
               <p>Intensity: {workout.intensity}</p>
               <p>
-                <FontAwesomeIcon icon={faUser} /> By: {workout.author.name}
+                <FontAwesomeIcon icon={faUser} /> {workout.author.name}
               </p>
               <p>
                 Created on: {new Date(workout.createdAt).toLocaleDateString()}
