@@ -129,3 +129,48 @@ h2 {
   src: url(../../../HydroHub/frontend/public/fonts/EB_Garamond/EBGaramond-Regular.ttf)
     format("truetype");
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 4vmin;
+    padding: 2vmin;
+  }
+
+  h1, h2 {
+    font-size: 5vmin;
+  }
+
+  button, input, select {
+    font-size: 3.5vmin;
+    padding: 1.5vmin;
+    width: 100%;
+  }
+
+  form {
+    width: 90%; /* Adjust the form width to fit smaller screens */
+  }
+
+  .workout-card {
+    flex-direction: column;
+    width: 100%; /* Full width for mobile */
+    margin-bottom: 2vmin; /* Space between cards */
+  }
+
+  .workout-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* If you're using grid layouts */
+  .grid-container {
+    grid-template-columns: 1fr; /* One column on mobile */
+  }
+
+  a {
+    font-size: 4vmin;
+  }
+
+  .workout-details {
+    padding: 3vmin;
+  }
+}
