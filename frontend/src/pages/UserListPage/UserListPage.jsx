@@ -23,17 +23,11 @@ export default function UserListPage({ user }) {
   }
   return (
     <>
-      {userWorkouts.map((workout) => (
-        <h1 key={workout._id}>
-          {workout.author.name}'s
-          Workouts
-        </h1>
-      ))}
-
+      <h1 className="list-header">{user.name}'s Workouts</h1>
       <>
         {userWorkouts.length > 0 ? (
           userWorkouts.map((workout) => (
-            <div key={workout._id}>
+            <div className="workout-list">
               <Link to={`/workouts/${workout._id}`}>
                 <article id="workout-card" key={workout._id}>
                   <p>

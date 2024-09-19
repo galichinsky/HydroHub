@@ -1,5 +1,5 @@
 .workout-details {
-  padding: 5vmin;
+  padding: 1vmin;
   border: 2px solid var(--primary-color); /* Your theme's primary color */
   border-radius: 8px;
   background-color: var(--background-color); /* Your theme's background */
@@ -7,7 +7,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   min-width: 60%;
   max-width: 90%;
-  margin: 2vmin;
+  margin: 3vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,12 +16,33 @@
 
 .workout-details h1 {
   font-size: 2rem;
-  color: var(--heading-color); /* The color used for headings */
+  color: #028fc2; /* The color used for headings */
+  font-family: "Poppins", sans-serif; /* Use a modern font */
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  /* -webkit-background-clip: text; */
+  background-clip: text; /* Add the standard property 'background-clip' */
+  /* -webkit-text-fill-color: transparent; */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  /* transition: transform 0.3s ease-in-out; */
 }
 
 .workout-details p {
   font-size: 1.2rem;
+  margin: 1vmin
+}
+
+.comments-header {
+  color: aliceblue;
+  font-size: 1.5rem;
+}
+
+p.comments {
+  font-size: 1.2rem;
   margin: 10px 0;
+  color: aliceblue;
 }
 
 .workout-details strong {

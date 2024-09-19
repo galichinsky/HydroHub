@@ -76,9 +76,9 @@ export default function WorkoutDetailsPage({ user }) {
             <strong>Total Time:</strong> {workout.totalTime} minutes
           </p>
           <div>
-            <h3>
+            <p>
               <strong>Workout:</strong>
-            </h3>{" "}
+            </p>{" "}
             <div dangerouslySetInnerHTML={{ __html: workout.workout }}></div>
           </div>
         </div>
@@ -95,13 +95,13 @@ export default function WorkoutDetailsPage({ user }) {
       </>
       <br />
       <section>
-        <h3>Comments</h3>
-        {!workout.comments.length && <p>There are no comments...</p>}
+        <h3 className="comments-header">Comments</h3>
+        {!workout.comments.length && <p style={{color: "white"}}>There are no comments...</p>}
       </section>
 
       {workout.comments.map((comment) => (
         <><div className="comment-container" key={comment._id}>
-          <p>
+          <p className="comment">
             {" "}
             <FontAwesomeIcon icon={faUser} /> {comment.author.name} on{" "}
             {new Date(comment.createdAt).toLocaleDateString()}

@@ -7,20 +7,22 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-  background-color: #bbebfa;
+  color: rgba(255, 255, 255, 0.867);
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.996);
+  background-color: #030548;
   background-image: radial-gradient(
       circle,
-      rgba(255, 255, 255, 0.15) 20%,
+      rgba(0, 0, 0, 0.458) 20%,
       transparent 20%
     ),
     radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 20%);
   background-size: 2vmin 2vmin;
-  border-bottom: black 1px solid;
+  /* border-bottom: black 1px solid; */
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.782);
 }
 
 .NavBar span {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255, 0.867);
 }
 
 .NavBar span {

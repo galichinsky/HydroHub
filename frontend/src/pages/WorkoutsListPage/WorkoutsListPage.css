@@ -19,7 +19,8 @@
   justify-content: center;
   align-items: center;
   /* make only four cards show in a line */
-  max-width: 80%;
+  max-width: 60%;
+  width: 70%;
 }
 
 .workout-list h2 {
@@ -53,4 +54,18 @@ article#workout-card:hover {
   text-align: center;
   color: #fff;
   font-size: 0.9rem;
+}
+
+.list-header {
+  font-family: "Poppins", sans-serif; /* Use a modern font */
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  -webkit-background-clip: text;
+  background-clip: text; /* Add the standard property 'background-clip' */
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+  transition: transform 0.3s ease-in-out;
 }

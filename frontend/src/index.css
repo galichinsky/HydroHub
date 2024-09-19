@@ -19,10 +19,10 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #bbebfa;
+  background-color: #030548;
   background-image: radial-gradient(
       circle,
-      rgba(255, 255, 255, 0.15) 20%,
+      rgba(0, 0, 0, 0.458) 20%,
       transparent 20%
     ),
     radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 20%);
@@ -31,6 +31,7 @@ body {
 
 h1,
 h2 {
+  color: aliceblue;
   text-align: center;
   font-family: EB_Garamond, serif;
   margin-top: 2vmin;
@@ -130,47 +131,3 @@ h2 {
     format("truetype");
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    font-size: 4vmin;
-    padding: 2vmin;
-  }
-
-  h1, h2 {
-    font-size: 5vmin;
-  }
-
-  button, input, select {
-    font-size: 3.5vmin;
-    padding: 1.5vmin;
-    width: 100%;
-  }
-
-  form {
-    width: 90%; /* Adjust the form width to fit smaller screens */
-  }
-
-  .workout-card {
-    flex-direction: column;
-    width: 100%; /* Full width for mobile */
-    margin-bottom: 2vmin; /* Space between cards */
-  }
-
-  .workout-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* If you're using grid layouts */
-  .grid-container {
-    grid-template-columns: 1fr; /* One column on mobile */
-  }
-
-  a {
-    font-size: 4vmin;
-  }
-
-  .workout-details {
-    padding: 3vmin;
-  }
-}
