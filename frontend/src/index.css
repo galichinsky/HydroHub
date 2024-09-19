@@ -60,12 +60,10 @@ button:disabled {
   background-color: grey;
 }
 
-
-
 a {
   border-radius: 0.8vmin;
   padding: 0.5vmin;
-  font-size: 2.5vmin;
+  font-size: 2.3vmin;
   text-decoration: none;
   color: #1a1a1a;
   font-family: EB_Garamond, serif;
@@ -130,4 +128,3 @@ h2 {
   src: url(../../../HydroHub/frontend/public/fonts/EB_Garamond/EBGaramond-Regular.ttf)
     format("truetype");
 }
-
