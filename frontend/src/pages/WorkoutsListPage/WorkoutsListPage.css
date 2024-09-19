@@ -38,7 +38,7 @@ article#workout-card {
 }
 
 article#workout-card:hover {
-  background-color: rgba(255, 255, 255, 0.699);
+  background-color: rgba(255, 255, 255, 0.831);
   border-radius: 15px;
   /* easy transition */
   /* transition: background-color 0.4s; */

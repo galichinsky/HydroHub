@@ -3,3 +3,20 @@ a.not-registered {
     color: #0077b6;
     text-shadow: 0px 0px 1px #000;
 }
+
+h2.log-in {
+    text-shadow: 0px 1px 2px #000;
+}
+
+.login-btn {
+    justify-self: center;
+    width: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form {
+    width: 30%;
+    padding: 2.5vmin;
+}

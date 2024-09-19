@@ -40,7 +40,7 @@ export default function NavBar({ user, setUser }) {
         </>
       ) : (
         <>
-          <Link to="/login">New Workout</Link>
+          <Link to="/login"><FontAwesomeIcon icon={faPlus} bounce/> New Workout</Link>
           &nbsp; | &nbsp;
           <Link to="/login">Log In</Link>
           {/* &nbsp; | &nbsp;
