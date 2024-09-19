@@ -25,7 +25,7 @@ export default function WorkoutListPage({ user }) {
       <div className="workout-list">
         {workouts.map((workout) => (
           <Link
-            to={user ? `/workouts/${workout._id}` : '/login'}
+            to={user ? `/workouts/${workout._id}` : "/login"}
             key={workout._id}
             className="workout-link"
           >
@@ -45,8 +45,6 @@ export default function WorkoutListPage({ user }) {
           </Link>
         ))}
       </div>
-     
     </>
   );
-  
 }

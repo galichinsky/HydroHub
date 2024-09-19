@@ -24,32 +24,29 @@ export default function UserListPage({ user }) {
   return (
     <>
       <h1 className="list-header">{user.name}'s Workouts</h1>
-      <>
+      <div className="workout-list">
         {userWorkouts.length > 0 ? (
           userWorkouts.map((workout) => (
-            <div className="workout-list">
-              <Link to={`/workouts/${workout._id}`}>
-                <article id="workout-card" key={workout._id}>
-                  <p>
-                    <strong>{workout.title}</strong>
-                  </p>
-                  <p>{workout.category.join(" | ")}</p>
-                  <p>Intensity: {workout.intensity}</p>
-                  <p>
-                    <FontAwesomeIcon icon={faUser} /> By: {workout.author.name}
-                  </p>
-                  <p>
-                    Created on:{" "}
-                    {new Date(workout.createdAt).toLocaleDateString()}
-                  </p>
-                </article>
-              </Link>
-            </div>
+            <Link to={`/workouts/${workout._id}`}>
+              <article id="workout-card" key={workout._id}>
+                <p>
+                  <strong>{workout.title}</strong>
+                </p>
+                <p>{workout.category.join(" | ")}</p>
+                <p>Intensity: {workout.intensity}</p>
+                <p>
+                  <FontAwesomeIcon icon={faUser} /> By: {workout.author.name}
+                </p>
+                <p>
+                  Created on: {new Date(workout.createdAt).toLocaleDateString()}
+                </p>
+              </article>
+            </Link>
           ))
         ) : (
           <p>No workouts created...</p>
         )}
-      </>
+      </div>
     </>
   );
 }
