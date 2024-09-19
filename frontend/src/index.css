@@ -113,6 +113,15 @@ h2 {
   color: rgb(166, 29, 29);
 }
 
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #0076b6;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
 @font-face {
   font-family: "EB_Garamond";
   src: url(../../../HydroHub/frontend/public/fonts/EB_Garamond/EBGaramond-Regular.ttf)

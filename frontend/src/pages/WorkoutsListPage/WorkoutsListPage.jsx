@@ -45,6 +45,8 @@ export default function WorkoutListPage({ user }) {
           </Link>
         ))}
       </div>
+     
     </>
   );
+  
 }

@@ -27,7 +27,7 @@ a {
 
 /* Hero Section */
 .hero-section {
-  height: 60vh;
+  height: 50vh;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
     url('/images/swim-background.jpg') no-repeat center center/cover;
   display: flex;
@@ -81,8 +81,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 80px 0;
-  /* background-color: #ffffff; */
+  padding: 5vmin;
 }
 
 .feature {
@@ -112,8 +111,8 @@ a {
 /* Footer */
 .footer {
   width: 100%;
-  padding: 40px 0;
-  background-color: #0077b6;
+  padding: 20px 0;
+  background-color: #0076b6;
   text-align: center;
   color: #fff;
   font-size: 0.9rem;

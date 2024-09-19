@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./HomePage.css";
+import { getUser } from "../../services/authService";
 
 export default function HomePage() {
+  const user = getUser();
   return (
     <>
       <h1 className="heading">HydroHub</h1>
@@ -16,6 +18,15 @@ export default function HomePage() {
             <Link className="hero-btn" to="/workouts">
               Explore Workouts
             </Link>
+            &nbsp; &nbsp;
+            {user ? (
+              <Link className="hero-btn" to="/workouts/new">
+                Create a Workout
+              </Link>
+            ) : (
+            <Link className="hero-btn" to="/login">
+              Create a Workout
+            </Link>)}
           </div>
         </section>
 

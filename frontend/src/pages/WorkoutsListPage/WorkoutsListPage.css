@@ -1,48 +1,56 @@
 #workout-card {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    background-color: #f9f9f9;
-    width: 40vmin;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  width: 40vmin;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #workout-card:hover {
-    background-color: #f0f0f0;
-    border-radius: 15px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
 }
 
-
-
 .workout-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /* make only four cards show in a line */
-    max-width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* make only four cards show in a line */
+  max-width: 80%;
 }
 
 .workout-list h2 {
-    text-align: center;
-    margin: 20px;
+  text-align: center;
+  margin: 20px;
 }
 
 article#workout-card {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.402);
-    border-radius: 15px;
-    background-color: rgba(236, 237, 255, 0.299);
-    width: 40vmin;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.402);
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  width: 40vmin;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 article#workout-card:hover {
-    background-color: rgba(240, 240, 240, 0.699);
-    border-radius: 15px;
-    /* easy transition */
-    transition: background-color 0.4s;
+  background-color: rgba(255, 255, 255, 0.699);
+  border-radius: 15px;
+  /* easy transition */
+  /* transition: background-color 0.4s; */
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #0076b6;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+}

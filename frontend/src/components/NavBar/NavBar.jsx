@@ -13,7 +13,9 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className="NavBar">
-      <Link to="/workouts" className="workouts-link">🏊🏼&nbsp; Home</Link>
+      <Link to="/" className="workouts-link">🏊🏼&nbsp; Home</Link>
+      &nbsp; | &nbsp;
+      <Link to="/workouts">🏋🏼‍♂️&nbsp; Workouts</Link>
       &nbsp; | &nbsp;
       {user ? (
         <>
@@ -25,14 +27,16 @@ export default function NavBar({ user, setUser }) {
           &nbsp; | &nbsp;
           <span>
             <Link to={`/userWorkouts`}>
-            <FontAwesomeIcon icon={faUser} bounce />
+            <FontAwesomeIcon icon={faUser} />
             &nbsp;{user.name}
             </Link>
           </span>
-          &nbsp; | &nbsp;
+          |
+          &nbsp;
           <Link to="" onClick={handleLogOut}>
             Log Out
           </Link>
+        
         </>
       ) : (
         <>
