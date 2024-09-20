@@ -6,7 +6,7 @@ import ReactQuill, {Quill} from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 export default function EditWorkoutPage() {
-  const [editorConent, setEditorContent] = useState("");
+  const navigate = useNavigate();
   const { workoutId } = useParams();
   const [workoutData, setWorkoutData] = useState({
     title: '',
@@ -16,6 +16,8 @@ export default function EditWorkoutPage() {
     totalTime: '',
     workout: '',
   });
+  
+  const [editorConent, setEditorContent] = useState("");
 
   const categories = [
     "Freestyle", "Backstroke", "Breaststroke", "Butterfly", "IM",
@@ -26,12 +28,12 @@ export default function EditWorkoutPage() {
   const intensities = ["Easy", "Moderate", "Hard", "All-out"];
   const courses = ["SCM", "SCY", "LCM"];
   
-  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchWorkout() {
       const workout = await workoutsService.getOne(workoutId);
       setWorkoutData(workout);
+      setEditorContent(workout.workout);
     }
     fetchWorkout();
   }, [workoutId]);
@@ -48,7 +50,7 @@ export default function EditWorkoutPage() {
   function handleMultiSelect(evt) {
     const { name, options } = evt.target;
     const selectedValues = Array.from(options).filter(o => o.selected).map(o => o.value);
-    setWorkoutData({ ...workoutData, [evt.target.name]: selectedValues });
+    setWorkoutData({ ...workoutData, [name]: selectedValues });
   }
 
   async function handleUpdateWorkout(evt) {
@@ -59,7 +61,6 @@ export default function EditWorkoutPage() {
 
   return (
     <form onSubmit={handleUpdateWorkout}>
-      {/* <h1>{workoutId ? "Edit Workout" : "New Workout"}</h1> */}
       <div>
         <label htmlFor="title-input">Workout Name</label>
         <input

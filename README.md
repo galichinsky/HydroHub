@@ -63,6 +63,7 @@ Try out the application here: [HydroHub by Gregory Lichinsky](https://hydrohub-9
   ![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
   ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=)
   ![Trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
+  ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
 ## Next Steps
 - Add a way to **favorite** workouts and filter through one's own workouts to see their favorited ones.
