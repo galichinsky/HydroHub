@@ -8,8 +8,6 @@ const commentSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-// const Comment = mongoose.model("Comment", commentSchema);
-
 const workoutSchema = new mongoose.Schema(
   {
     title: { type: String,  required: true },

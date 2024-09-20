@@ -67,21 +67,6 @@ export default function NewWorkoutPage() {
     setWorkoutData({ ...workoutData, [evt.target.name]: selectedValues });
   }
 
-  function handleCheckboxChange(evt) {
-    const { name, checked } = evt.target;
-    if (checked) {
-      setWorkoutData({
-        ...workoutData,
-        category: [...workoutData.category, name],
-      });
-    } else {
-      setWorkoutData({
-        ...workoutData,
-        category: workoutData.category.filter((item) => item !== name),
-      });
-    }
-  }
-
   async function handleAddWorkout(evt) {
     evt.preventDefault();
     await workoutsService.create(workoutData);

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import * as authService from "../../services/authService";
 import "./NavBar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faPlus, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faPlus, faArrowRightFromBracket, faDumbbell, faWater } from "@fortawesome/free-solid-svg-icons";
 import "./NavBar.css";
 
 export default function NavBar({ user, setUser }) {
@@ -13,9 +13,9 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className="NavBar">
-      <Link to="/" className="workouts-link">🏊🏼&nbsp; Home</Link>
+      <Link to="/" className="workouts-link"><FontAwesomeIcon icon={faWater} fade /></Link>
       &nbsp; | &nbsp;
-      <Link to="/workouts">🏋🏼‍♂️&nbsp; Workouts</Link>
+      <Link to="/workouts"><FontAwesomeIcon icon={faDumbbell} bounce />&nbsp; Workouts</Link>
       &nbsp; | &nbsp;
       {user ? (
         <>
@@ -43,8 +43,6 @@ export default function NavBar({ user, setUser }) {
           <Link to="/login"><FontAwesomeIcon icon={faPlus} style={{color: "#fefefe"}} bounce/> New Workout</Link>
           &nbsp; | &nbsp;
           <Link to="/login">Log In</Link>
-          {/* &nbsp; | &nbsp;
-          <Link to="/signup">Sign Up</Link> */}
         </>
       )}
     </nav>
