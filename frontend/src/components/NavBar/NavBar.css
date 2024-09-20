@@ -35,6 +35,10 @@ a.logout {
   padding-right: 6vmin;
 }
 
+a.login {
+  padding-right: 6vmin;
+}
+
 .NavBar span {
   display: flex;
   align-items: center;
