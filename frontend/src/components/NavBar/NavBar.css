@@ -31,6 +31,10 @@
   color: rgb(255, 255, 255, 0.867);
 }
 
+a.logout {
+  padding-right: 6vmin;
+}
+
 .NavBar span {
   display: flex;
   align-items: center;
@@ -42,6 +46,10 @@
 
 .workouts-link {
   text-decoration: none;
+}
+
+a.workouts-link {
+  padding-left: 5vmin;
 }
 
 a.workouts-link:hover {

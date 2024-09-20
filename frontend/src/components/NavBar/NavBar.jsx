@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import * as authService from "../../services/authService";
 import "./NavBar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faPlus, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import "./NavBar.css";
 
 export default function NavBar({ user, setUser }) {
@@ -33,8 +33,8 @@ export default function NavBar({ user, setUser }) {
           </span>
           |
           &nbsp;
-          <Link to="" onClick={handleLogOut}>
-            Log Out
+          <Link className="logout" to="" onClick={handleLogOut}>
+            <FontAwesomeIcon icon={faArrowRightFromBracket} beat /> &nbsp;Log Out 
           </Link>
         
         </>
