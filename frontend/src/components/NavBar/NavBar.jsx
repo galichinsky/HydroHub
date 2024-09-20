@@ -27,7 +27,7 @@ export default function NavBar({ user, setUser }) {
           &nbsp; | &nbsp;
           <span>
             <Link to={`/userWorkouts`}>
-            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faUser} beat/>
             &nbsp;{user.name}
             </Link>
           </span>
